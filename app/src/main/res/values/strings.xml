@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">crumby</string>
+    <string name="open_til_you_re_hungry">Open til You\'re Hungry!</string>
+    <string name="family_owned_amp_operated">Family Owned &amp; Operated</string>
+    <string name="en_fr">EN/FR</string>
+    <string name="delivery_is_not_free">Delivery is NOT free!</string>
+</resources>

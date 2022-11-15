@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C4C7CF">
+
+    <Button
+        android:id="@+id/lang_swap2"
+        android:layout_width="78dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#B52032"
+        android:gravity="center"
+        android:insetTop="4dp"
+        android:insetBottom="4dp"
+        android:text="@string/en_fr"
+        android:textColor="#CFD8DC"
+        android:textSize="12sp"
+        app:iconPadding="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <View
+        android:id="@+id/mainView2"
+        android:layout_width="349dp"
+        android:layout_height="599dp"
+        android:layout_marginTop="52dp"
+        android:background="#DBE4E2"
+        android:clickable="false"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_submitOrder"
+        android:layout_width="204dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="552dp"
+        android:backgroundTint="#B52032"
+        android:gravity="center"
+        android:insetTop="4dp"
+        android:insetBottom="4dp"
+        android:text="Submit Order"
+        android:textColor="#CFD8DC"
+        android:textSize="14sp"
+        app:iconPadding="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <RadioButton
+        android:id="@+id/rad_small"
+        android:layout_width="227dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="324dp"
+        android:buttonTint="#A66C48"
+        android:text="Small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/rad_med"
+        android:layout_width="227dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="354dp"
+        android:buttonTint="#A66C48"
+        android:text="Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/rad_large"
+        android:layout_width="227dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="384dp"
+        android:buttonTint="#A66C48"
+        android:text="Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fry_text"
+        android:layout_width="176dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="276dp"
+        android:background="#C4C7CF"
+        android:fontFamily="@font/bitter"
+        android:gravity="center"
+        android:text="Fry Size"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/toppings_txt"
+        android:layout_width="176dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="120dp"
+        android:background="#C4C7CF"
+        android:fontFamily="@font/bitter"
+        android:gravity="center"
+        android:text="Toppings"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/create_pizza"
+        android:layout_width="228dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="64dp"
+        android:background="#A66C48"
+        android:clickable="false"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="Create Your Pizza"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <RadioButton
+        android:id="@+id/rad_cheese"
+        android:layout_width="227dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="167dp"
+        android:buttonTint="#A66C48"
+        android:checked="false"
+        android:text="Cheese"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/rad_pin"
+        android:layout_width="227dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="227dp"
+        android:buttonTint="#A66C48"
+        android:text="Pineapple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/rad_pep"
+        android:layout_width="227dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="197dp"
+        android:buttonTint="#A66C48"
+        android:text="Pepperoni"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cust_info"
+        android:layout_width="266dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="437dp"
+        android:background="#C4C7CF"
+        android:text="Enter Customer Information"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
