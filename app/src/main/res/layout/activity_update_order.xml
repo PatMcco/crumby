@@ -76,24 +76,6 @@
         tools:text="Crumby's Pizza" />
 
     <Button
-        android:id="@+id/lang_swap5"
-        android:layout_width="78dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="#B52032"
-        android:gravity="center"
-        android:insetTop="4dp"
-        android:insetBottom="4dp"
-        android:text="@string/en_fr"
-        android:textColor="#CFD8DC"
-        android:textSize="12sp"
-        app:iconPadding="6dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
-
-    <Button
         android:id="@+id/btn_changeOrder2"
         android:layout_width="204dp"
         android:layout_height="40dp"
