@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/search_Results"
+        android:id="@+id/et_searchResults"
         android:layout_width="279dp"
         android:layout_height="152dp"
         android:layout_marginTop="420dp"
@@ -37,7 +37,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/orderFind_msg"
+        android:id="@+id/et_orderFind"
         android:layout_width="279dp"
         android:layout_height="58dp"
         android:layout_marginTop="288dp"
@@ -126,7 +126,7 @@
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
-        android:id="@+id/orderIdSearch"
+        android:id="@+id/et_orderIdSearch"
         android:layout_width="210dp"
         android:layout_height="39dp"
         android:layout_marginTop="228dp"

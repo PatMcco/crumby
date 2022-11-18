@@ -76,7 +76,7 @@
         tools:text="Crumby's Pizza" />
 
     <Button
-        android:id="@+id/btn_changeOrder2"
+        android:id="@+id/btn_change"
         android:layout_width="204dp"
         android:layout_height="40dp"
         android:layout_marginTop="408dp"
@@ -95,7 +95,7 @@
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <Button
-        android:id="@+id/btn_findOrder2"
+        android:id="@+id/btn_find"
         android:layout_width="204dp"
         android:layout_height="40dp"
         android:layout_marginTop="320dp"
