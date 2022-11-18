@@ -112,7 +112,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/lang_swap"
+        android:id="@+id/btn_langSwap"
         android:layout_width="78dp"
         android:layout_height="35dp"
         android:layout_marginStart="31dp"

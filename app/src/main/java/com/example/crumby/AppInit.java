@@ -9,15 +9,11 @@ public class AppInit extends AppCompatActivity {
 
     //buttons
     Button btn_startOrder;
+    Button btn_langSwap;
 
-
-
-    private View.OnClickListener startOrderOnClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            startOrderClicked();
-        }
-    };
+    //listeners
+    private View.OnClickListener startOrderOnClickListener = v -> startOrderClicked();
+    private View.OnClickListener languageSwapListener = v -> langSwapClicked();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,15 +21,17 @@ public class AppInit extends AppCompatActivity {
         setContentView(R.layout.activity_appinit);
 
         btn_startOrder = findViewById(R.id.btn_startOrder);
+        btn_langSwap = findViewById(R.id.btn_langSwap);
         btn_startOrder.setOnClickListener(startOrderOnClickListener);
-
-
-
+        btn_langSwap.setOnClickListener(languageSwapListener);
     }
 
     private void startOrderClicked(){
-        Intent intent = new Intent(getApplicationContext(), NewOrder.class);
+        Intent intent = new Intent(AppInit.this, NewOrder.class);
         startActivity(intent);
+    }
 
+    private void langSwapClicked(){
+        btn_langSwap.setText("ENGLISH");
     }
 }

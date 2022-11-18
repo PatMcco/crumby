@@ -20,18 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/cust_num"
-        android:layout_width="261dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="492dp"
-        android:background="#C4C7CF"
-        android:text="Phone Number"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btn_submitOrder"
         android:layout_width="204dp"
@@ -146,7 +134,6 @@
         android:layout_height="30dp"
         android:layout_marginTop="167dp"
         android:buttonTint="#A66C48"
-        android:checked="false"
         android:text="Cheese"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -177,7 +164,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/cust_name"
         android:layout_width="261dp"
         android:layout_height="39dp"
@@ -185,8 +172,22 @@
         android:background="#C4C7CF"
         android:text="Name"
         android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/cust_num"
+        android:layout_width="261dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="492dp"
+        android:background="#C4C7CF"
+        android:text="Phone Number"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
