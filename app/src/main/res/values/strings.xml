@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">crumby</string>
+    <string name="open_til_you_re_hungry">Open til You\'re Hungry!</string>
+    <string name="family_owned_amp_operated">"Family Owned &amp; Operated"</string>
     <string name="en_fr">EN/FR</string>
     <string-array name="english">
         <item name="app1">Start Order</item>
@@ -19,10 +21,10 @@
         <item name="new9">Large</item>
         <item name="new10">Submit</item>
 
-        <item name="ord1">We're getting your order ready…</item>
+        <item name="ord1">We\'re getting your order ready…</item>
         <item name="ord2">View Dashboard</item>
 
-        <item name="up1">Enter Order ID# to Change or Delete:</item>
+        <item name="up1">Enter Order ID\# to Change or Delete\:</item>
         <item name="up2">Change</item>
         <item name="up3">Delete</item>
         <item name="up4">Back</item>
@@ -31,15 +33,15 @@
         <item name="dash2">Change an Order</item>
         <item name="dash3">Start Over</item>
 
-        <item name="sea1">Search by Order ID#</item>
-        <item name="sea2">Or Find all Orders:</item>
+        <item name="sea1">Search by Order ID\#</item>
+        <item name="sea2">Or Find all Orders\:</item>
         <item name="sea3">Search</item>
         <item name="sea4">Back</item>
     </string-array>
 
     <string-array name="french">
         <item name="app1">Commencer la Commande</item>
-        <item name="app2">La livraison n'est PAS gratuite</item>
+        <item name="app2">La livraison n\'est PAS gratuite</item>
 
         <item name="new1">Créez votre pizza</item>
 
@@ -58,7 +60,7 @@
         <item name="ord1">Nous préparons votre commande…</item>
         <item name="ord2">Afficher le tableau de bord</item>
 
-        <item name="up1">Entrez le numéro d'identification de la commande à modifier ou à supprimer</item>
+        <item name="up1">Entrez le numéro d\'identification de la commande à modifier ou à supprimer</item>
         <item name="up2">Changer</item>
         <item name="up3">Effacer</item>
         <item name="up4">Reculer</item>
