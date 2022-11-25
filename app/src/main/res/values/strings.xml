@@ -19,7 +19,9 @@
         <item name="new7">Small</item>
         <item name="new8">Medium</item>
         <item name="new9">Large</item>
-        <item name="new10">Submit</item>
+        <item name="new10">Name</item>
+        <item name="new11">Phone Number</item>
+        <item name="new12">Submit</item>
 
         <item name="ord1">We\'re getting your order ready…</item>
         <item name="ord2">View Dashboard</item>
@@ -55,7 +57,9 @@
         <item name="new7">Petit</item>
         <item name="new8">Moyen</item>
         <item name="new9">Grand</item>
-        <item name="new10">Soumettre</item>
+        <item name="new10">Nom</item>
+        <item name="new11">Numéro de Téléphone</item>
+        <item name="new12">Soumettre</item>
 
         <item name="ord1">Nous préparons votre commande…</item>
         <item name="ord2">Afficher le tableau de bord</item>

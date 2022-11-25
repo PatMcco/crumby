@@ -1,6 +1,5 @@
 package com.example.crumby;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,22 +24,28 @@ public class AppInit extends AppCompatActivity {
     //listeners
 
     private View.OnClickListener startOrderOnClickListener = v -> startOrderClicked();
-    private View.OnClickListener languageSwapListener = v -> langSwapClicked();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appinit);
-        defEnglish = true;
+        SharedPreferences sp = getApplicationContext().getSharedPreferences("UserPref", Context.MODE_PRIVATE);
+        if (sp.contains("langSetting")) {
+            defEnglish = sp.getBoolean("langSetting",true);
+        }
         btn_startOrder = findViewById(R.id.btn_startOrder);
         btn_langSwap = findViewById(R.id.btn_langSwap);
         btn_startOrder.setOnClickListener(startOrderOnClickListener);
-        btn_langSwap.setOnClickListener(languageSwapListener);
         delivery = findViewById(R.id.delivery_msg);
         eng = getResources().getStringArray(R.array.english);
         fr = getResources().getStringArray(R.array.french);
         pref = getSharedPreferences("UserPref", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = pref.edit();
+        btn_langSwap.setOnClickListener(v -> {
+            langSwapClicked();
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean("langSetting", defEnglish);
+            editor.commit();
+        });
         populateButtonText(eng, fr);
     }
 
@@ -50,7 +55,13 @@ public class AppInit extends AppCompatActivity {
     }
 
     private void langSwapClicked(){
-        btn_langSwap.setText("ENGLISH");
+        if(!defEnglish){
+        defEnglish = true;
+        }
+        else {
+            defEnglish = false;
+        }
+        populateButtonText(eng,fr);
     }
 
     private void populateButtonText(String[] eng, String[] fr){
@@ -58,7 +69,7 @@ public class AppInit extends AppCompatActivity {
         btn_startOrder.setText(eng[0]);
         delivery.setText(eng[1]);
         }
-        else if(!defEnglish){
+        else {
             btn_startOrder.setText(fr[0]);
             delivery.setText(fr[1]);
     }
