@@ -15,6 +15,7 @@ public class AppInit extends AppCompatActivity {
     Button btn_startOrder;
     Button btn_langSwap;
     TextView delivery;
+    TextView sarc_slogan;
     String[] eng;
     String[] fr;
     Boolean defEnglish;
@@ -34,6 +35,7 @@ public class AppInit extends AppCompatActivity {
             defEnglish = sp.getBoolean("langSetting",true);
         }
         btn_startOrder = findViewById(R.id.btn_startOrder);
+        sarc_slogan = findViewById(R.id.sarc_slogan);
         btn_langSwap = findViewById(R.id.btn_langSwap);
         btn_startOrder.setOnClickListener(startOrderOnClickListener);
         delivery = findViewById(R.id.delivery_msg);
@@ -66,10 +68,12 @@ public class AppInit extends AppCompatActivity {
 
     private void populateButtonText(String[] eng, String[] fr){
         if(defEnglish){
-        btn_startOrder.setText(eng[0]);
-        delivery.setText(eng[1]);
+            sarc_slogan.setText(eng[27]);
+            btn_startOrder.setText(eng[0]);
+            delivery.setText(eng[1]);
         }
         else {
+            sarc_slogan.setText(fr[27]);
             btn_startOrder.setText(fr[0]);
             delivery.setText(fr[1]);
     }

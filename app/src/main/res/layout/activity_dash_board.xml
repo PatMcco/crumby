@@ -23,7 +23,7 @@
     <Button
         android:id="@+id/btn_changeOrder"
         android:layout_width="204dp"
-        android:layout_height="40dp"
+        android:layout_height="52dp"
         android:layout_marginTop="276dp"
         android:backgroundTint="#B52032"
         android:gravity="center"
@@ -41,8 +41,8 @@
 
     <Button
         android:id="@+id/btn_findOrder"
-        android:layout_width="204dp"
-        android:layout_height="40dp"
+        android:layout_width="207dp"
+        android:layout_height="52dp"
         android:layout_marginTop="196dp"
         android:backgroundTint="#B52032"
         android:gravity="center"

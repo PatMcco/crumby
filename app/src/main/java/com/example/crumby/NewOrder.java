@@ -38,10 +38,12 @@ public class NewOrder extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_order);
-        sp = getApplicationContext().getSharedPreferences("langSetting", Context.MODE_PRIVATE);
+        sp = getApplicationContext().getSharedPreferences("UserPref", Context.MODE_PRIVATE);
         if (sp.contains("langSetting")) {
             defEnglish = sp.getBoolean("langSetting",true);
         }
+        eng = getResources().getStringArray(R.array.english);
+        fr = getResources().getStringArray(R.array.french);
         create_txt = findViewById(R.id.create_pizza);
         rad_cheese = findViewById(R.id.rad_cheese);
         rad_pep = findViewById(R.id.rad_pep);

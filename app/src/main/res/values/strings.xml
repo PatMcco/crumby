@@ -35,10 +35,12 @@
         <item name="dash2">Change an Order</item>
         <item name="dash3">Start Over</item>
 
-        <item name="sea1">Search by Order ID\#</item>
-        <item name="sea2">Or Find all Orders\:</item>
+        <item name="sea1">Search by Order ID#</item>
+        <item name="sea2">Or Find all Orders:</item>
         <item name="sea3">Search</item>
         <item name="sea4">Back</item>
+        <item name="app3">Open til You\'re hungry!</item>
+
     </string-array>
 
     <string-array name="french">
@@ -77,6 +79,7 @@
         <item name="sea2">Ou Rechercher toutes les commandes</item>
         <item name="sea3">Chercher</item>
         <item name="sea4">Reculer</item>
+        <item name="app3">Ouvrez jusqu\'à ce que vous ayez faim!</item>
     </string-array>
 
 
