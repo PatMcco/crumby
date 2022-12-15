@@ -61,22 +61,13 @@ public class OrderComplete extends AppCompatActivity {
         Intent intent = getIntent();
         String custName = intent.getStringExtra("name");
         String custNum = intent.getStringExtra("num");
-        String toppings1 = intent.getStringExtra("toppings1");
-        String toppings2 = intent.getStringExtra("toppings2");
-        String toppings3 = intent.getStringExtra("toppings3");
+        String toppings1 = intent.getStringExtra("topping1");
+        String toppings2 = intent.getStringExtra("topping2");
+        String toppings3 = intent.getStringExtra("topping3");
         String size = intent.getStringExtra("side");
-        String custInfo = custName + " " + custNum;
-
-
-//        DBAdapter db = new DBAdapter(this);
-//        db.open();
-//        Cursor custInfo = db.getLastOrder();
-//        if (custInfo.moveToFirst()) {
-//            String[] lastOrder = custInfo.toString().split(",");
-//        }
-
-
-
+        String custInfo = custName + " " + custNum + "\n"
+                + size + " Pizza with " + toppings1 + "," + toppings2 + "," + toppings3;
+        custInfo_msg.setText(custInfo);
     }
     private void viewDashboardClicked(){
         Intent intent = new Intent(this, DashBoard.class);

@@ -32,6 +32,9 @@ public class NewOrder extends AppCompatActivity {
     String[] eng;
     String[] fr;
     SharedPreferences sp;
+    String topping1 = "";
+    String topping2 = "";
+    String topping3 = "";
 
 
     //listeners
@@ -137,9 +140,7 @@ public class NewOrder extends AppCompatActivity {
         String name = cust_name.getText().toString();
         String num = cust_num.getText().toString();
         String side = "";
-        String topping1 = "";
-        String topping2 = "";
-        String topping3 = "";
+
         //get date and time
         String date = java.text.DateFormat.getDateTimeInstance().format(java.util.Calendar.getInstance().getTime());
         String time = java.text.DateFormat.getTimeInstance().format(java.util.Calendar.getInstance().getTime());
