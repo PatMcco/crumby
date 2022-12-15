@@ -5,10 +5,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+
 
 public class NewOrder extends AppCompatActivity {
 
@@ -33,6 +36,11 @@ public class NewOrder extends AppCompatActivity {
 
     //listeners
     private View.OnClickListener submitOrderListener = v -> submitOrderClicked();
+    private View.OnClickListener rad_smallListener = v -> rad_smallClicked();
+    private View.OnClickListener rad_medListener = v -> rad_medClicked();
+    private View.OnClickListener rad_largeListener = v -> rad_largeClicked();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +50,24 @@ public class NewOrder extends AppCompatActivity {
         if (sp.contains("langSetting")) {
             defEnglish = sp.getBoolean("langSetting",true);
         }
+        DBAdapter db = new DBAdapter(this);
         eng = getResources().getStringArray(R.array.english);
         fr = getResources().getStringArray(R.array.french);
         create_txt = findViewById(R.id.create_pizza);
         rad_cheese = findViewById(R.id.rad_cheese);
+        cust_name = findViewById(R.id.cust_name);
+        cust_name.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                // If the EditText loses focus, get a reference to the InputMethodManager
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                // If the imm is not null, hide the keyboard
+                if (imm != null) {
+                    imm.hideSoftInputFromWindow(cust_name.getWindowToken(), 0);
+                }
+            }
+        });
+        cust_num = findViewById(R.id.cust_num);
         rad_pep = findViewById(R.id.rad_pep);
         rad_pin = findViewById(R.id.rad_pin);
         rad_small = findViewById(R.id.rad_small);
@@ -55,6 +77,9 @@ public class NewOrder extends AppCompatActivity {
         cust_num = findViewById(R.id.cust_num);
         top_txt = findViewById(R.id.toppings_txt);
         fry_txt = findViewById(R.id.fry_text);
+        rad_small.setOnClickListener(rad_smallListener);
+        rad_med.setOnClickListener(rad_medListener);
+        rad_large.setOnClickListener(rad_largeListener);
         btn_submitOrder = findViewById(R.id.btn_submitOrder);
         btn_submitOrder.setOnClickListener(submitOrderListener);
         populateButtonText(eng, fr);
@@ -91,8 +116,64 @@ public class NewOrder extends AppCompatActivity {
         }
     }
 
+
+    //this was less screwing around then making a radio group
+    private void rad_smallClicked() {
+        rad_med.setChecked(false);
+        rad_large.setChecked(false);
+    }
+    private void rad_medClicked() {
+        rad_small.setChecked(false);
+        rad_large.setChecked(false);
+    }
+
+    private void rad_largeClicked() {
+        rad_small.setChecked(false);
+        rad_med.setChecked(false);
+    }
+
+
     private void submitOrderClicked(){
+        String name = cust_name.getText().toString();
+        String num = cust_num.getText().toString();
+        String side = "";
+        String topping1 = "";
+        String topping2 = "";
+        String topping3 = "";
+        //get date and time
+        String date = java.text.DateFormat.getDateTimeInstance().format(java.util.Calendar.getInstance().getTime());
+        String time = java.text.DateFormat.getTimeInstance().format(java.util.Calendar.getInstance().getTime());
+        if(rad_small.isChecked()){
+            side = "Small";
+        }
+        else if(rad_med.isChecked()){
+            side = "Medium";
+        }
+        else if(rad_large.isChecked()){
+            side = "Large";
+        }
+        if(rad_cheese.isChecked()){
+            topping1 = "Cheese";
+        }
+        if(rad_pep.isChecked()){
+            topping2 = "Pepperoni";
+        }
+        if(rad_pin.isChecked()){
+            topping3 = "Pineapple";
+        }
+        DBAdapter db = new DBAdapter(this);
+        db.open();
+        db.resetDB();
+        db.insertContact(name, num, date, time, topping1, topping2, topping3, side);
+        db.close();
         Intent intent = new Intent(this, OrderComplete.class);
+        //add order info to extras
+        intent.putExtra("name", name);
+        intent.putExtra("num", num);
+        intent.putExtra("topping1", topping1);
+        intent.putExtra("topping2", topping2);
+        intent.putExtra("topping3", topping3);
+        intent.putExtra("side", side);
         startActivity(intent);
     }
 }

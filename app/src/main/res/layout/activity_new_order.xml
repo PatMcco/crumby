@@ -13,7 +13,6 @@
         android:layout_height="599dp"
         android:layout_marginTop="52dp"
         android:background="#DBE4E2"
-        android:clickable="false"
         android:paddingHorizontal="5dp"
         android:paddingVertical="5dp"
         app:layout_constraintEnd_toEndOf="parent"

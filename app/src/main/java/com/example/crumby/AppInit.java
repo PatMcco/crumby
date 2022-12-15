@@ -19,12 +19,14 @@ public class AppInit extends AppCompatActivity {
     String[] eng;
     String[] fr;
     Boolean defEnglish;
+    Button btn_Dashboard;
 
     //shared preferences
     SharedPreferences pref;
     //listeners
 
     private View.OnClickListener startOrderOnClickListener = v -> startOrderClicked();
+    private View.OnClickListener dashBoardOnClickListener = v -> dashBoardClicked();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,8 @@ public class AppInit extends AppCompatActivity {
         sarc_slogan = findViewById(R.id.sarc_slogan);
         btn_langSwap = findViewById(R.id.btn_langSwap);
         btn_startOrder.setOnClickListener(startOrderOnClickListener);
+        btn_Dashboard = findViewById(R.id.btn_Dashboard);
+        btn_Dashboard.setOnClickListener(dashBoardOnClickListener);
         delivery = findViewById(R.id.delivery_msg);
         eng = getResources().getStringArray(R.array.english);
         fr = getResources().getStringArray(R.array.french);
@@ -54,6 +58,11 @@ public class AppInit extends AppCompatActivity {
     private void startOrderClicked(){
         Intent intent = new Intent(AppInit.this, NewOrder.class);
         startActivity(intent);
+    }
+
+    private void dashBoardClicked(){
+        Intent intent2 = new Intent(AppInit.this, DashBoard.class);
+        startActivity(intent2);
     }
 
     private void langSwapClicked(){

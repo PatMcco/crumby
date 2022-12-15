@@ -1,10 +1,11 @@
 package com.example.crumby;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.*;
+import android.database.sqlite.*;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class OrderComplete extends AppCompatActivity {
     String[] eng;
     String[] fr;
     SharedPreferences sp;
+    TextView custInfo_msg;
 
     //listeners
     private View.OnClickListener viewDashboardListener = v -> viewDashboardClicked();
@@ -34,9 +36,11 @@ public class OrderComplete extends AppCompatActivity {
         }
         eng = getResources().getStringArray(R.array.english);
         fr = getResources().getStringArray(R.array.french);
+        custInfo_msg = findViewById(R.id.custInfo_msg);
         btn_viewDashboard = findViewById(R.id.btn_viewDashboard);
         btn_viewDashboard.setOnClickListener(viewDashboardListener);
         getReady_msg = findViewById(R.id.getReady_msg);
+        setCustInfo_msg();
         populateButtonText(eng, fr);
     }
 
@@ -49,6 +53,30 @@ public class OrderComplete extends AppCompatActivity {
             getReady_msg.setText(fr[14]);
             btn_viewDashboard.setText(fr[15]);
         }
+    }
+
+
+
+    private void setCustInfo_msg(){
+        Intent intent = getIntent();
+        String custName = intent.getStringExtra("name");
+        String custNum = intent.getStringExtra("num");
+        String toppings1 = intent.getStringExtra("toppings1");
+        String toppings2 = intent.getStringExtra("toppings2");
+        String toppings3 = intent.getStringExtra("toppings3");
+        String size = intent.getStringExtra("side");
+        String custInfo = custName + " " + custNum;
+
+
+//        DBAdapter db = new DBAdapter(this);
+//        db.open();
+//        Cursor custInfo = db.getLastOrder();
+//        if (custInfo.moveToFirst()) {
+//            String[] lastOrder = custInfo.toString().split(",");
+//        }
+
+
+
     }
     private void viewDashboardClicked(){
         Intent intent = new Intent(this, DashBoard.class);

@@ -22,6 +22,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/btn_Dashboard"
+        android:layout_width="204dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="460dp"
+        android:backgroundTint="#B52032"
+        android:gravity="center"
+        android:insetTop="4dp"
+        android:insetBottom="4dp"
+        android:text="View Dashboard"
+        android:textColor="#CFD8DC"
+        android:textSize="14sp"
+        app:iconPadding="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    <Button
         android:id="@+id/btn_startOrder"
         android:layout_width="204dp"
         android:layout_height="53dp"
