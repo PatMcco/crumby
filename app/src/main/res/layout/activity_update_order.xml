@@ -20,6 +20,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="204dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="484dp"
+        android:backgroundTint="#B52032"
+        android:gravity="center"
+        android:insetTop="4dp"
+        android:insetBottom="4dp"
+        android:text="Delete an Order"
+        android:textColor="#CFD8DC"
+        android:textSize="14sp"
+        app:iconPadding="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
     <TextView
         android:id="@+id/orderChange_msg"
         android:layout_width="274dp"

@@ -3,6 +3,11 @@ import android.content.*;
 import android.database.*;
 import android.database.sqlite.*;
 import android.util.Log;
+import android.widget.*;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 
 public class DBAdapter {
@@ -38,7 +43,6 @@ public class DBAdapter {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
         }
 
-
         public void onCreate(SQLiteDatabase db) {
             try {
                 db.execSQL(DATABASE_CREATE);
@@ -47,7 +51,6 @@ public class DBAdapter {
             }
         }//end method onCreate
 
-
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             Log.w(TAG, "Upgrade database from version " + oldVersion + " to "
                     + newVersion + ", which will destroy all old data");
@@ -55,6 +58,7 @@ public class DBAdapter {
             onCreate(db);
         }//end method onUpgrade
     }
+
 
     //open the database
     public DBAdapter open() throws SQLException {
@@ -88,7 +92,6 @@ public class DBAdapter {
         db.execSQL(DATABASE_CREATE);
     }
 
-
     //insert a contact into the database
     public long insertContact(String name, String phone, String date, String time, String cheese, String pepperoni, String pineapple, String size) {
         ContentValues initialValues = new ContentValues();
@@ -108,12 +111,6 @@ public class DBAdapter {
         return db.delete(DATABASE_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
     }
 
-    //retrieve all the contacts
-    public Cursor getAllContacts() {
-        return db.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_NAME,
-                KEY_PHONE, KEY_DATE, KEY_TIME, KEY_TOP1, KEY_TOP2, KEY_TOP3, KEY_SIZE}, null, null, null, null, null);
-    }
-
     //retrieve a particular contact
     public Cursor getContact(long rowId) throws SQLException {
         Cursor mCursor =
@@ -124,6 +121,32 @@ public class DBAdapter {
             mCursor.moveToFirst();
         }
         return mCursor;
+    }
+
+    //get all contacts
+    public Cursor getAllContacts()throws SQLException{
+        Cursor mCursor =
+                db.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
+                                KEY_NAME, KEY_PHONE, KEY_DATE, KEY_TIME, KEY_TOP1, KEY_TOP2, KEY_TOP3, KEY_SIZE}, null, null,
+                        null, null, null, null);
+        if (mCursor != null)
+        {
+            mCursor.moveToFirst();
+        }
+        return mCursor;
+    }
+
+    //copydb
+    public void CopyDB(InputStream inputStream,
+                        OutputStream outputStream) throws IOException {
+        //---copy 1K bytes at a time---
+        byte[] buffer = new byte[1024];
+        int length;
+        while ((length = inputStream.read(buffer))>0) {
+            outputStream.write(buffer, 0, length);
+        }
+        inputStream.close();
+        outputStream.close();
     }
 
     //update a contact
@@ -138,5 +161,14 @@ public class DBAdapter {
         args.put(KEY_TOP3, pineapple);
         args.put(KEY_SIZE, size);
         return db.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
+    }
+
+    //count all rowIds
+    public int countRowIds() {
+        Cursor mCursor = db.rawQuery("SELECT COUNT(*) FROM " + DATABASE_TABLE, null);
+        mCursor.moveToFirst();
+        int count = mCursor.getInt(0);
+        mCursor.close();
+        return count;
     }
 }

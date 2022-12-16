@@ -20,17 +20,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/et_searchResults"
         android:layout_width="279dp"
         android:layout_height="152dp"
         android:layout_marginTop="420dp"
         android:background="#C4C7CF"
+        android:clickable="false"
         android:ems="10"
-        android:inputType="number"
-        android:textAlignment="center"
+        android:scrollIndicators="right"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        android:selectAllOnFocus="true"
+        android:textAlignment="viewStart"
         android:textColor="#000000"
         android:textSize="18sp"
+        android:verticalScrollbarPosition="defaultPosition"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

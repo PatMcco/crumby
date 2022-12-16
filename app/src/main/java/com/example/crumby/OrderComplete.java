@@ -3,14 +3,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.*;
-import android.database.sqlite.*;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 
 public class OrderComplete extends AppCompatActivity {
 
@@ -55,17 +51,16 @@ public class OrderComplete extends AppCompatActivity {
         }
     }
 
-
-
     private void setCustInfo_msg(){
         Intent intent = getIntent();
+        String custOrderId = intent.getStringExtra("currentOrderId");
         String custName = intent.getStringExtra("name");
         String custNum = intent.getStringExtra("num");
         String toppings1 = intent.getStringExtra("topping1");
         String toppings2 = intent.getStringExtra("topping2");
         String toppings3 = intent.getStringExtra("topping3");
         String size = intent.getStringExtra("side");
-        String custInfo = custName + " " + custNum + "\n"
+        String custInfo = "Order ID#: " + custOrderId + "\n" + custName + "\n" + "Phone Number-" + custNum + "\n"
                 + size + " Pizza with " + toppings1 + "," + toppings2 + "," + toppings3;
         custInfo_msg.setText(custInfo);
     }

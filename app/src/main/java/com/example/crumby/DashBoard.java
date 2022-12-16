@@ -57,6 +57,7 @@ public class DashBoard extends AppCompatActivity {
     }
 
     private void findOrderClicked(){
+
         Intent intent = new Intent(this, Search.class);
         startActivity(intent);
     }

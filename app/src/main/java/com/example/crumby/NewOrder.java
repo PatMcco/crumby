@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,7 +41,6 @@ public class NewOrder extends AppCompatActivity {
     private View.OnClickListener rad_smallListener = v -> rad_smallClicked();
     private View.OnClickListener rad_medListener = v -> rad_medClicked();
     private View.OnClickListener rad_largeListener = v -> rad_largeClicked();
-
 
 
     @Override
@@ -119,7 +117,6 @@ public class NewOrder extends AppCompatActivity {
         }
     }
 
-
     //this was less screwing around then making a radio group
     private void rad_smallClicked() {
         rad_med.setChecked(false);
@@ -129,7 +126,6 @@ public class NewOrder extends AppCompatActivity {
         rad_small.setChecked(false);
         rad_large.setChecked(false);
     }
-
     private void rad_largeClicked() {
         rad_small.setChecked(false);
         rad_med.setChecked(false);
@@ -162,13 +158,16 @@ public class NewOrder extends AppCompatActivity {
         if(rad_pin.isChecked()){
             topping3 = "Pineapple";
         }
+
         DBAdapter db = new DBAdapter(this);
         db.open();
-        db.resetDB();
         db.insertContact(name, num, date, time, topping1, topping2, topping3, side);
+        int custOrderID = db.countRowIds();
+        String id = String.valueOf(custOrderID);
         db.close();
         Intent intent = new Intent(this, OrderComplete.class);
         //add order info to extras
+        intent.putExtra("currentOrderId", id);
         intent.putExtra("name", name);
         intent.putExtra("num", num);
         intent.putExtra("topping1", topping1);
